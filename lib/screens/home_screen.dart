@@ -1,6 +1,7 @@
 import 'package:chatty_flutter/screens/hotel_screen.dart';
 import 'package:chatty_flutter/screens/ticket_view.dart';
 import 'package:chatty_flutter/utils/app_info_list.dart';
+import 'package:chatty_flutter/widgets/double_text_widget.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -73,24 +74,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const Gap(40),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Upcoming Flights", style: Styles.headLineStyle2,),
-                    //컬러만 다른것으로 적용시키고 싶을 때 copyWith color로 다시 색상을 불러오면된다.
-                    InkWell(
-                      onTap: (){
-                        print("ontap View all");
-                      },
-                        child: Text(
-                          "View all",
-                          style: Styles.textStyle
-                              .copyWith(color: Styles.primaryColor),
-                        ),
-                      ),
-                    ],
-                ),
-
+                const AppDoubleTextWidget(bigText: "Upcoming Flights", smallText: "View All"),
               ],
             ),
           ),
@@ -103,25 +87,9 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           Gap(15),
-          Container(
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Hotels", style: Styles.headLineStyle2,),
-                //컬러만 다른것으로 적용시키고 싶을 때 copyWith color로 다시 색상을 불러오면된다.
-                InkWell(
-                  onTap: (){
-                    print("You are Tapped");
-                  },
-                  child: Text(
-                    "View all",
-                    style: Styles.textStyle
-                        .copyWith(color: Styles.primaryColor),
-                  ),
-                ),
-              ],
-            ),
+            child: AppDoubleTextWidget(bigText: "Hotels", smallText: "View All"),
           ),
           Gap(15),
           SingleChildScrollView(
