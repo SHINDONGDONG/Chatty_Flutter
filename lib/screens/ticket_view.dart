@@ -1,5 +1,6 @@
 import 'package:chatty_flutter/utils/app_layout.dart';
 import 'package:chatty_flutter/utils/app_styles.dart';
+import 'package:chatty_flutter/widgets/layout_builder_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -136,25 +137,7 @@ class TicketView extends StatelessWidget {
                   ),
                   Expanded(child:Padding(
                     padding: EdgeInsets.all(AppLayout.getHeight(6)),
-                    child: LayoutBuilder(
-                      builder: (BuildContext context , BoxConstraints constraints) {
-                       return Flex(
-                         direction: Axis.horizontal,
-                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                         mainAxisSize: MainAxisSize.max,
-                         children: List.generate((constraints.constrainWidth()/15).floor(), (index) => SizedBox(
-                           width: 5, height: 1,
-                           child: DecoratedBox(
-                             decoration: BoxDecoration(
-                               color: isColor==null? Colors.grey.shade300:
-                               Colors.white,
-                             ),
-                           ),
-                         ),),
-                       );
-                      },
-
-                    ),
+                    child: AppLayoutBuilderWdiget(section: 15,),
                   ),
                   ),
                   SizedBox(
