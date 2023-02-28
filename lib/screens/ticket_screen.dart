@@ -7,7 +7,7 @@ import 'package:chatty_flutter/widgets/ticket_tabs.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-
+import 'package:barcode_widget/barcode_widget.dart';
 import '../utils/app_styles.dart';
 
 class TicketScreen extends StatelessWidget {
@@ -41,7 +41,7 @@ class TicketScreen extends StatelessWidget {
                   isColor: true,
                 ),
               ),
-              SizedBox(height: 1,),
+              const SizedBox(height: 1,),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 15),
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
@@ -100,8 +100,77 @@ class TicketScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              const SizedBox(height: 1,),
+              /*
+              barcode
+              * */
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(AppLayout.getHeight(21)),
+                    bottomRight: Radius.circular(AppLayout.getHeight(21)),
+                  )
+                ),
+                margin: EdgeInsets.only(left: AppLayout.getHeight(15),right: AppLayout.getHeight(15)),
+                padding: EdgeInsets.only(top: AppLayout.getHeight(20),bottom: AppLayout.getHeight(20)),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: AppLayout.getHeight(15)),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(AppLayout.getHeight(15)),
+                    child: BarcodeWidget(
+                        data: 'https://github.com/SHINDONGDONG',
+                        barcode: Barcode.code128(),
+                        drawText: true,
+                        color: Styles.textColor,
+                        width: double.infinity,
+                        height: 70,
+                    ),
+                  ),
+                ),
+              ),
+              Gap(AppLayout.getHeight(20)),
+              Container(
+                padding: EdgeInsets.only(left: AppLayout.getHeight(15)),
+                child: TicketView(ticket: ticketList[0],
+                ),
+              )
+
             ],
-          )
+          ),
+          Positioned(
+            //포지션을 고정시켜준다 화면에
+            left: AppLayout.getHeight(19),
+            top: AppLayout.getHeight(295),
+            child: Container(
+              padding: const EdgeInsets.all(3),
+              decoration: BoxDecoration(
+                //컨테이너를 서클로 만들어준다.
+                shape: BoxShape.circle,
+                border: Border.all(color: Styles.textColor, width: 2),
+              ),
+              //동그란 서클을 만들어준다.
+              child: CircleAvatar(
+                maxRadius: 4,
+                backgroundColor: Styles.textColor,
+              ),
+            ),
+          ),
+          Positioned(
+            right: AppLayout.getHeight(19),
+            top: AppLayout.getHeight(295),
+            child: Container(
+              padding: EdgeInsets.all(3),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(color: Styles.textColor, width: 2),
+              ),
+              child: CircleAvatar(
+                maxRadius: 4,
+                backgroundColor: Styles.textColor,
+              ),
+            ),
+          ),
         ],
       ),
     );

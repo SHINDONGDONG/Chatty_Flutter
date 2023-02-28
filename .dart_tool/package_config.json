@@ -8,6 +8,18 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "barcode",
+      "rootUri": "file:///Users/mincheol/.pub-cache/hosted/pub.dev/barcode-2.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "barcode_widget",
+      "rootUri": "file:///Users/mincheol/.pub-cache/hosted/pub.dev/barcode_widget-2.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "boolean_selector",
       "rootUri": "file:///Users/mincheol/.pub-cache/hosted/pub.dev/boolean_selector-2.1.1",
       "packageUri": "lib/",
@@ -116,6 +128,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "qr",
+      "rootUri": "file:///Users/mincheol/.pub-cache/hosted/pub.dev/qr-3.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///usr/local/Caskroom/flutter/3.7.0/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -170,7 +188,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-02-21T06:33:51.053688Z",
+  "generated": "2023-02-28T16:00:04.768936Z",
   "generator": "pub",
   "generatorVersion": "2.19.0"
 }
