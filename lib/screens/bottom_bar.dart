@@ -1,5 +1,6 @@
 
 import 'package:chatty_flutter/screens/home_screen.dart';
+import 'package:chatty_flutter/screens/profile_screen.dart';
 import 'package:chatty_flutter/screens/search_screen.dart';
 import 'package:chatty_flutter/screens/ticket_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
@@ -20,7 +21,7 @@ class _BottomBarState extends State<BottomBar> {
     const HomeScreen(),
     const SearchScreen(),
     const TicketScreen(),
-    const Text("Profile"),
+    const ProfileScreen(),
   ];
 
   void _onItemTapped(int index){
